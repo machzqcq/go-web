@@ -41,7 +41,7 @@ Note: If you are using vscode, then your integrated terminal executes .bashrc, h
 - Related info: This might be the most closest to many developers who know RVM, pyvm, virtualenv etc. Here is the [gvm](https://github.com/moovweb/gvm) (go version manager). This lets you define multiple GOROOT (i.e. multiple Go runtimes) and manage multiple GOPATHs with gvm pkgset. Read the full documentation
 
 
-To install local assets:
+## To install local assets:
 
 * install NodeJs (https://nodejs.org)
 * install `grunt-cli` globally via `npm install -g grunt-cli`

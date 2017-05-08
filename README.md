@@ -49,7 +49,7 @@ Note: If you are using vscode, then your integrated terminal executes .bashrc, h
 * run `grunt` from the root directory of the project to compile CSS
 
 To run the application:
-* install the app with `go install github.com/lss/webapp`
+* install the app with `go install github.com/machzqcq/webapp`
 * run with `bin/webapp`
 * navigate to `http://localhost:8000/html/home.html`
 

@@ -53,5 +53,5 @@ Note: If you are using vscode, then your integrated terminal executes .bashrc, h
 To run the application:
 * install the app with `go install github.com/machzqcq/webapp`
 * run with `bin/webapp`
-* navigate to `http://localhost:8000/html/home.html`
+* navigate to `http://localhost:8000/html/home`
 

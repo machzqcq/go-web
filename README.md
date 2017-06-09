@@ -20,7 +20,7 @@ mkdir -p ~/Code/go/src/github.com/machzqcq/go-experiments
 As you continue working - you will quickly realize that you need multiple workspaces/projects i.e. you would not want to put your source code always in the Global GOPATH ($HOME/Code/go) as I declared above. There are two ways to deal with it
 
 - Option1: By default you can simply have multiple paths defined in your GOPATH and Go looks for src in all folders in that order (So lets say you can have your global , private, work etc.). 
-- Option2: Everytime your cd into the root of your projet (think of github project for e.g.), then initialize GOPATH. So essentially override the 'cd' command for bash shell and drop in a .gopath empty file in the root of every folder/project. That way the cd will append your current root of folder to GOTPATH. I had this in my ~/.bash_profile and a .gopath in the root of every go project where my 'src' resides
+- Option2: Everytime your cd into the root of your projet (think of github project for e.g.), then initialize GOPATH. So essentially override the 'cd' command for bash shell and drop in a .gopath empty file in the root of every folder/project. That way the cd will append your current root of folder to GOTPATH. I had this in my ~/.bash_profile and a .gopath in the root of every go project where my 'src' resides OR `source ~/.bash_profile` if you had the below in your bash profile
 
 ```
 cd () {
@@ -35,6 +35,8 @@ cd () {
     done
 }
 ```  
+
+Note: If you are running `go build`, then run it from the project root and not from 'src' folder. So it might seem a little counterintuitive, but go build automatically looks in the $GOPATH/src folder i.e. you don't have to specifically step inside 'src' folder. This might be more evident in nested package structures. For e.g. if you had $GOPATH=~/git-projects/go-web/src/github.com/machzqcq/fileserver/fileserver.go, then when you cd into ~/git-projects/go-web (assuming you have a .gopath here) , then to build the binary, just run `go build github.com/machzqcq/fileserver` , this will put the fileserver binary in `~/git-projects/go-web/` folder. On the other hand `go install github.com/machzqcq/fileserver` drop the binary in  `~/git-projects/go-web/bin` folder
 
 Note: If you are using vscode, then your integrated terminal executes .bashrc, hence include the above in .bashrc as well
 
